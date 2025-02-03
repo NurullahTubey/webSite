@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Detayı</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="post-details">
+    <h1 id="post-title"></h1>
+    <p id="post-content"></p>
+  </div>
+
+  <script>
+    const post = JSON.parse(localStorage.getItem("selectedPost"));
+    if (post) {
+      document.getElementById("post-title").textContent = post.title;
+      document.getElementById("post-content").textContent = post.content;
+    } else {
+      document.getElementById("post-content").textContent = "Post bulunamadı.";
+    }
+  </script>
+</body>
+</html>
